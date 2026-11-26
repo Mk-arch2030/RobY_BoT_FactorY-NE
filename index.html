@@ -41,8 +41,27 @@ footer{padding:22px 0 40px;text-align:center;color:var(--mut);font-size:13px}foo
 .js-tabs .pane{display:none!important}.js-tabs .pane.on{display:block!important}
 .js-tabs .gcat{display:none}.js-tabs .gcat.on{display:block}.js-tabs .gcat h3{margin-top:0!important}
 .js-tabs section{padding:22px 0}
+
+/* factory-products tab: temple/screen flip cards */
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-bottom:6px}
+.flip-card{perspective:1200px;min-width:0}
+.flip-inner{position:relative;display:block;width:100%;height:530px;padding:0;font:inherit;color:inherit;text-align:center;cursor:pointer;background:none;border:0;transform-style:preserve-3d;transition:transform .7s ease}
+.flip-card.is-flipped .flip-inner{transform:rotateY(180deg)}
+.flip-inner:focus-visible{outline:2px solid var(--em);outline-offset:3px}
+.flip-face{position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;padding:16px 14px;overflow:hidden;background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.flip-back{transform:rotateY(180deg)}
+.flip-face img{display:block;width:100%;height:auto;border:2px solid #9c7f3a;border-radius:6px}
+.flip-back img{flex:1;min-height:0;object-fit:contain;background:#000}
+.flip-face .card-top{color:var(--em);font:11px monospace;direction:ltr}
+.flip-title{color:var(--gold2);font-weight:700;font-size:1.05rem;line-height:1.5}
+.flip-desc{color:var(--mut);font-size:.88rem;line-height:1.7}
+.flip-stage{color:var(--em);font-size:.8rem;line-height:1.6;padding:6px 8px;border:1px solid rgba(46,229,157,.35);border-radius:6px;background:rgba(4,20,15,.6)}
+.flip-cap{color:var(--gold);font-size:.85rem}
+.flip-hint{margin-top:auto;color:var(--mut);font-size:.75rem}
+@media(max-width:620px){.flip-inner{height:540px}}
+@media(prefers-reduced-motion:reduce){.flip-inner{transition:none}}
 </style></head><body>
-<nav><div class="w"><div class="logo">☥ ROBY_BOT_FACTORY</div><div class="on">● SYSTEM ONLINE</div></div></nav><div id="tabbar" class="tabbar" hidden><div class="w"><div class="tabs" role="tablist" aria-label="أقسام الموقع"><button type="button" role="tab" data-tab="home">الرئيسية</button><button type="button" role="tab" data-tab="products">المنتجات</button><button type="button" role="tab" data-tab="journey">رحلتنا وحالة المصنع</button><button type="button" role="tab" data-tab="team">الفريق</button><button type="button" role="tab" data-tab="gallery">معرض الأصناف</button><button type="button" role="tab" data-tab="vault">خزينة القلم</button><button type="button" role="tab" data-tab="numbers">؟ أرقام</button></div></div></div>
+<nav><div class="w"><div class="logo">☥ ROBY_BOT_FACTORY</div><div class="on">● SYSTEM ONLINE</div></div></nav><div id="tabbar" class="tabbar" hidden><div class="w"><div class="tabs" role="tablist" aria-label="أقسام الموقع"><button type="button" role="tab" data-tab="home">الرئيسية</button><button type="button" role="tab" data-tab="products">المنتجات</button><button type="button" role="tab" data-tab="factory-products">منتجات المصنع</button><button type="button" role="tab" data-tab="journey">رحلتنا وحالة المصنع</button><button type="button" role="tab" data-tab="team">الفريق</button><button type="button" role="tab" data-tab="gallery">معرض الأصناف</button><button type="button" role="tab" data-tab="vault">خزينة القلم</button><button type="button" role="tab" data-tab="numbers">؟ أرقام</button></div></div></div>
 <header class="hero" id="home"><div class="w"><div class="eye">EST. 2003 · EL-MATARIYA · ROBOTIC EDITION</div><h1>مصنع الروبي</h1>
 <p>من ممرض إلى مصنع برمجيات. من أجل الأطباء، ومن أجل رحلة مريض أكثر أمانًا.</p>
 <div class="quote">«بناها ممرض، لتخدم الأطباء، وتحمي رحلة المريض.»</div>
@@ -51,13 +70,106 @@ footer{padding:22px 0 40px;text-align:center;color:var(--mut);font-size:13px}foo
 <section id="seal"><div class="w"><div class="seal"><div class="hex"><svg style="direction:ltr;unicode-bidi:isolate" viewBox="0 0 200 230" width="150" height="172" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b8"/><stop offset="1" stop-color="#c8962b"/></linearGradient></defs><polygon points="100,6 188,56 188,174 100,224 12,174 12,56" fill="#06241a" stroke="url(#g)" stroke-width="3"/><polygon points="100,22 174,64 174,166 100,208 26,166 26,64" fill="none" stroke="#2ee59d" stroke-opacity=".45" stroke-width="1"/><path d="M62 52 C100 80 100 80 138 52 M62 178 C100 150 100 150 138 178 M62 52 C100 90 100 140 138 178 M138 52 C100 90 100 140 62 178" fill="none" stroke="#2ee59d" stroke-opacity=".35" stroke-width="1.4"/><text direction="ltr" x="100" y="108" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="40" fill="url(#g)">RBF</text><line x1="56" y1="122" x2="144" y2="122" stroke="url(#g)" stroke-width="1"/><text direction="ltr" x="100" y="152" text-anchor="middle" font-family="monospace" font-weight="700" font-size="24" fill="#2ee59d">0 FAIL ™</text></svg></div><div class="sealtx"><h3>البصمة الوراثية والعلامة التجارية</h3><p>RBF مع 0 FAIL™: العلامة اللي بتعرّف المصنع، والدليل إن اللي طالع منه بيعدّي الاختبار. كل منتج بيشيل نفس البصمة.</p><div class="dna">R · B · F</div><small>RobY · BoT · FactorY — ختم حمو، بالأرقام اللي من عنده</small></div></div></div></section>
 <section id="products"><div class="w"><h2>منتجاتنا</h2><p class="sub">كل المشاريع وحالتها.</p>
 <div class="prod"><div class="p st-done"><span class="stl">✔ تم · DONE</span><h3>Smart Life LIMS</h3><p>نظام معلومات معمل (إعادة هيكلة)</p></div><div class="p st-done"><span class="stl">✔ تم · DONE</span><h3>Newlife LIMS</h3><p>نظام معلومات المختبر</p><code>352 TESTS · PostgreSQL 18</code><small style="display:block;color:var(--mut);margin-top:4px">Newlife LIMS · تجميد مستقر</small></div><div class="p st-done"><span class="stl">✔ تم · DONE</span><h3>Shipping Hub</h3><p>محرك الشحن والوفاء (اتفكّ تجميده)</p><code>282 TESTS PASS</code></div><div class="p st-freeze"><span class="stl">❄ مجمّد · FREEZE</span><h3>Supermarket POS</h3><p>نقطة بيع (POS MVP)</p></div><div class="p st-done"><span class="stl">✔ تم · DONE</span><h3>Dr_Roby_Clinic Pro Standalone</h3><p>نسخة مستقلة تعمل</p><code>24 TESTS PASS · localStorage</code></div><div class="p st-done"><span class="stl">✔ تم · DONE</span><h3>Dr_Roby_Clinic & Hemodialysis EMR</h3><p>سجل طبي لوحدة الغسيل الكلوي</p></div><div class="p st-pend"><span class="stl">⏳ قيد التطوير · IN PROGRESS</span><h3>Dr_Roby_ViP_Clinic</h3><p>عيادة إلكترونية (ViP) · Stage 08</p><code>360 TESTS PASS · Stage 08</code><small style="display:block;color:var(--mut);margin-top:4px">إثبات مرحلة مستقل عن اختبارات Anas Clinic</small></div><div class="p st-done"><span class="stl">✔ تم الاختبار · TESTED</span><h3><a href="https://github.com/Mk-arch2030/anas-clinic" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">Anas Clinic ↗</a></h3><p>عيادة أنس · نسخة Demo تعمل على الجهاز</p><code>468 TESTS PASS · 0 FAIL</code><small style="display:block;color:var(--mut);margin-top:4px">تم التشغيل والاختبار على Infinix / Termux · لا توجد قاعدة بيانات موصولة ولا اعتماد للاستخدام السريري</small></div><div class="p st-done"><span class="stl">✔ تم · DONE</span><h3>Dialysis Board</h3><p>لوحة متابعة الغسيل الكلوي</p></div><div class="p st-done"><span class="stl">✔ تم · DONE</span><h3>Factory Clipboard</h3><p>حافظة المصنع</p></div></div><div class="note">الموقع التعريفي منشور للعامة؛ أما إطلاق المنتجات للاستخدام العام أو السريري فغير مُصرّح به. هذه الصفحة للعرض فقط، ولا تُنشر عليها بيانات مرضى.</div></div></section>
+<section id="factory-products"><div class="w"><h2>منتجات المصنع</h2><p class="sub">خمس معابد، وخلف كل معبد شاشته الحقيقية. وش الكارت هو الفكرة، وضهره هو اللي اشتغل فعلًا، ومكتوب عليه مرحلته بصراحة. اضغط على الكارت لقلبه.</p>
+<div class="flip-grid">
+        <article class="flip-card" id="p-clinic">
+          <button class="flip-inner" type="button" aria-pressed="false" aria-label="اقلب الكارت: ViP Clinic — المعبد الأول">
+            <span class="flip-face flip-front">
+              <span class="card-top">01 / THE FIRST TEMPLE</span>
+              <img src="img/factory-products/clinic-temple.jpg" alt="معبد ViP Clinic — المعبد الأول" loading="lazy">
+              <span class="flip-title">ViP Clinic — المعبد الأول</span>
+              <span class="flip-desc">نظام عيادة: تسجيل المرضى، يوم العيادة والمناظرات، الروشتات وصلاحيات الطبيب والتمريض، عربي/إنجليزي.</span>
+              <span class="flip-stage">حالة المرحلة: شغّال كنسخة <bdi>Demo</bdi> على <bdi>localStorage</bdi> • 360 اختبار ناجح، 0 فشل (آخر إثبات 24 نوفمبر 2026)</span>
+              <span class="flip-hint">اضغط لقلب الكارت ↺ الشاشة الحقيقية</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="card-top">REAL SCREEN</span>
+              <img src="img/factory-products/clinic-screen.jpg" alt="شاشة العيادة الحقيقية: يومية المناظرة وFAIL 0" loading="lazy">
+              <span class="flip-cap">شاشة العيادة الحقيقية: يومية المناظرة وFAIL 0</span>
+              <span class="flip-hint">اضغط للرجوع للمعبد ↺</span>
+            </span>
+          </button>
+        </article>
+        <article class="flip-card" id="p-pos">
+          <button class="flip-inner" type="button" aria-pressed="false" aria-label="اقلب الكارت: Super Market POS — المعبد الصغير">
+            <span class="flip-face flip-front">
+              <span class="card-top">02 / THE MINI TEMPLE</span>
+              <img src="img/factory-products/pos-temple.jpg" alt="معبد Super Market POS — المعبد الصغير" loading="lazy">
+              <span class="flip-title">Super Market POS — المعبد الصغير</span>
+              <span class="flip-desc">كاشير سوبرماركت: لوحة التحكم، المنتجات، المخزون، البيع الجديد، الفاتورة، التقرير اليومي.</span>
+              <span class="flip-stage">حالة المرحلة: أساس بصري (<bdi>VISUAL FOUNDATION</bdi>) — البيانات التشغيلية لسه متوصلتش</span>
+              <span class="flip-hint">اضغط لقلب الكارت ↺ الشاشة الحقيقية</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="card-top">REAL SCREEN</span>
+              <img src="img/factory-products/pos-screen.jpg" alt="شاشة POS الحقيقية: Fast Checkout" loading="lazy">
+              <span class="flip-cap">شاشة <bdi>POS</bdi> الحقيقية: Fast Checkout</span>
+              <span class="flip-hint">اضغط للرجوع للمعبد ↺</span>
+            </span>
+          </button>
+        </article>
+        <article class="flip-card" id="p-shipping">
+          <button class="flip-inner" type="button" aria-pressed="false" aria-label="اقلب الكارت: Shipping Hub (ROCKET) — معبد الشحن">
+            <span class="flip-face flip-front">
+              <span class="card-top">03 / THE LOGISTICS TEMPLE</span>
+              <img src="img/factory-products/shipping-temple.jpg" alt="معبد Shipping Hub (ROCKET) — معبد الشحن" loading="lazy">
+              <span class="flip-title">Shipping Hub (ROCKET) — معبد الشحن</span>
+              <span class="flip-desc">مكتب شحن: مركز تحكم، تجّار، مندوبين، شحنات، تحصيل، مرتجعات، وإنشاء وتحويل حالة الأوردر.</span>
+              <span class="flip-stage">حالة المرحلة: أساس بصري — واجهة الإدارة ظاهرة، والقدرات التشغيلية محجوزة لمراحل لاحقة</span>
+              <span class="flip-hint">اضغط لقلب الكارت ↺ الشاشة الحقيقية</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="card-top">REAL SCREEN</span>
+              <img src="img/factory-products/shipping-screen.jpg" alt="شاشة ROCKET الحقيقية: Control Center" loading="lazy">
+              <span class="flip-cap">شاشة ROCKET الحقيقية: Control Center</span>
+              <span class="flip-hint">اضغط للرجوع للمعبد ↺</span>
+            </span>
+          </button>
+        </article>
+        <article class="flip-card" id="p-dialysis">
+          <button class="flip-inner" type="button" aria-pressed="false" aria-label="اقلب الكارت: وحدة الغسيل الكلوي — فلتر الحياة">
+            <span class="flip-face flip-front">
+              <span class="card-top">04 / THE LIFE FILTER</span>
+              <img src="img/factory-products/dialysis-temple.jpg" alt="معبد وحدة الغسيل الكلوي — فلتر الحياة" loading="lazy">
+              <span class="flip-title">وحدة الغسيل الكلوي — فلتر الحياة</span>
+              <span class="flip-desc">لوحة ماكينات الغسيل: حالة كل ماكينة، المريض والجلسة، UF والتدفق (Qb) والضغط، وتنبيهات الجلسات.</span>
+              <span class="flip-stage">حالة المرحلة: شغّالة داخل نسخة العيادة التجريبية — ماكينات <bdi>Fresenius</bdi> وجلسات فعلية على الشاشة</span>
+              <span class="flip-hint">اضغط لقلب الكارت ↺ الشاشة الحقيقية</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="card-top">REAL SCREEN</span>
+              <img src="img/factory-products/dialysis-screen.jpg" alt="شاشة الغسيل الحقيقية: ماكينات وجلسات" loading="lazy">
+              <span class="flip-cap">شاشة الغسيل الحقيقية: ماكينات وجلسات</span>
+              <span class="flip-hint">اضغط للرجوع للمعبد ↺</span>
+            </span>
+          </button>
+        </article>
+        <article class="flip-card" id="p-lims">
+          <button class="flip-inner" type="button" aria-pressed="false" aria-label="اقلب الكارت: New Star LIMS — معبد DNA">
+            <span class="flip-face flip-front">
+              <span class="card-top">05 / THE DNA TEMPLE</span>
+              <img src="img/factory-products/lims-temple.jpg" alt="معبد New Star LIMS — معبد DNA" loading="lazy">
+              <span class="flip-title">New Star LIMS — معبد <bdi>DNA</bdi></span>
+              <span class="flip-desc">نظام معمل: المرضى، العينات، التحاليل والبروفايلات، النتائج، السجل والتقارير.</span>
+              <span class="flip-stage">حالة المرحلة: <bdi>Stage 01</bdi> • الإصدار <bdi>0.1.0</bdi> • <bdi>System Online</bdi> (البداية، مش منتج مكتمل)</span>
+              <span class="flip-hint">اضغط لقلب الكارت ↺ الشاشة الحقيقية</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="card-top">REAL SCREEN</span>
+              <img src="img/factory-products/lims-screen.jpg" alt="شاشة LIMS الحقيقية: System Online" loading="lazy">
+              <span class="flip-cap">شاشة LIMS الحقيقية: System Online</span>
+              <span class="flip-hint">اضغط للرجوع للمعبد ↺</span>
+            </span>
+          </button>
+        </article>
+</div><div class="note">كل الشاشات لقطات حقيقية من أجهزة المصنع. «Demo» و«أساس بصري» معناهم إن المنتج لسه مش نهائي، وإطلاق المنتجات للاستخدام العام أو السريري غير مُصرّح به.</div></div></section>
 <section id="journey"><div class="w two"><div class="box"><h3>رحلتنا</h3><ul class="tl"><li><b>2026-08</b><span>Smart Life LIMS · التأسيس</span></li><li><b>2026-08</b><span>Newlife LIMS · دورة حياة التشغيل</span></li><li><b>2026-08</b><span>Shipping Hub · تجميد مستقر</span></li><li><b>2026-09</b><span>POS MVP · تجميد مستقر</span></li><li><b>2026-09</b><span>Dr_Roby_Clinic Standalone · واجهة تعمل</span></li><li><b>2026-09</b><span>Hemodialysis EMR · استخدام حقيقي</span></li><li><b>2026-11</b><span>Anas Clinic · 468 اختبارًا ناجحًا على Infinix / Termux</span></li><li><b>2026-11</b><span>ViP Clinic · Stage 08 regression proof</span></li></ul></div><div class="box"><h3>حالة المصنع</h3><ul class="fs"><li class="ok"><span>بيئة Infinix / Termux</span><b>جاهز</b></li><li class="ok"><span>PostgreSQL 18 (معزول)</span><b>جاهز</b></li><li class="ok"><span>مستودعات Git</span><b>نشط</b></li><li class="ok"><span>مصنع متعدد المنتجات</span><b>يعمل</b></li><li class="ok"><span>تعاون فريق الذكاء الاصطناعي</span><b>نشط</b></li><li class="ok"><span>مسار الأمان والأدلة</span><b>مطبق</b></li><li class="lock"><span>الإطلاق العام</span><b>غير مصرح به</b></li></ul><div class="chips" style="margin-top:14px"><span>Node.js</span><span>Vite</span><span>Fastify</span><span>PostgreSQL 18</span><span>Chromium + ChromeDriver</span><span>WebDriver E2E</span><span>Git & Bundles</span><span>Security & Backups</span><span>AI Team</span></div></div></div></section>
 <section id="team"><div class="w"><h2>فريق المصنع</h2><p class="sub">أعضاء بأسماء وصفات، مش أدوات.</p><div class="team"><div class="m"><b>MOHAMED.K_ROBY</b><span>القائد البشري</span></div><div class="m"><b>أنووس · Anas<br><bdi dir="ltr" style="color:#e0b84e;font-size:.85em;letter-spacing:.08em">· Instinct ·</bdi></b><span>السكرتير الخاص للقائد</span></div><div class="m"><b>شقو · ChatGPT</b><span>المراجع الهندسي الرئيسي</span></div><div class="m"><b>Termux</b><span>محرك التنفيذ</span></div><div class="m"><b>Meta AI</b><span>البحث والتوثيق</span></div><div class="m"><b>Gemini</b><span>مهندس الذكاء الاصطناعي</span></div><div class="m"><b>Ox Alpha</b><span>حفر الكود الثقيل</span></div><div class="m"><b>DeepSeek</b><span>أخو Ox Alpha في الكود</span></div><div class="m"><b>Chrome</b><span>المتصفح الرئيسي</span></div><div class="m"><b>Others</b><span>باقي الفريق كله<br><bdi dir="ltr" style="color:#3ddc97;letter-spacing:.12em">✓✓✓✓✓✓✓</bdi></span></div></div></div></section>
 <section id="gallery"><style>.gal{margin-top:6px}.gal h3{color:var(--gold);font-size:20px;margin:0 0 4px}.gal .gs{color:var(--mut);font-size:14px;margin-bottom:14px}.gg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gg figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}.gg img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.gg figcaption{padding:10px 14px;font-size:14px;color:var(--txt)}.gg figcaption b{color:var(--gold);display:block;margin-bottom:2px}@media(max-width:760px){.gg{grid-template-columns:1fr}}</style><div class="w gal"><h2>معرض الأصناف</h2><p class="sub">كل صنف في صور بسيطة: الفكرة، والمستخدم، والمصمم.</p><div class="gbar" id="gbar" role="tablist" aria-label="أصناف المعرض" hidden><button type="button" role="tab" data-cat="clinics">العيادات</button><button type="button" role="tab" data-cat="labs">المعامل</button><button type="button" role="tab" data-cat="pos">نقاط البيع</button><button type="button" role="tab" data-cat="shipping">مركز الشحن</button></div><div class="gcat" id="gallery-clinics" data-cat="clinics"><h3>العيادات والرعاية</h3><p class="gs">من ملف المريض للمواعيد والروشتات والتقارير والغسيل الكلوي. الصور توضيحية وبيانات المرضى فيها وهمية.</p><div class="gg"><figure><img src="img/clinics-1-idea.jpg" alt="الفكرة العامة لنظام العيادات والرعاية" loading="lazy" width="1200" height="675"><figcaption><b>الفكرة العامة</b>مركز العيادة وكل خدماته في نظرة واحدة</figcaption></figure><figure><img src="img/clinics-2-user.jpg" alt="ممرضة تستخدم تطبيق العيادة على الموبايل" loading="lazy" width="1200" height="675"><figcaption><b>من عين المستخدم</b>بسيطة للمستخدم</figcaption></figure><figure><img src="img/clinics-3-builder.jpg" alt="مكتب المصمم: Termux ومخطط الواجهة والمنطق وقاعدة البيانات" loading="lazy" width="1200" height="675"><figcaption><b>من عين المصمم</b>مبنية بالكود والدليل</figcaption></figure></div></div><div class="gcat" id="gallery-labs" data-cat="labs"><h3 style="margin-top:34px">المعامل</h3><p class="gs">من استقبال العينات للنتائج ومراقبة الجودة والتقارير. الصور توضيحية والعينات فيها بأكواد وهمية.</p><div class="gg"><figure><img src="img/labs-1-idea.jpg" alt="الفكرة العامة لنظام المعمل" loading="lazy" width="1200" height="675"><figcaption><b>الفكرة العامة</b>المعمل كله في نظرة واحدة: العينات والطلبات والنتائج والجودة والتقارير</figcaption></figure><figure><img src="img/labs-2-user.jpg" alt="فني معمل يستخدم تطبيق المعمل على الموبايل" loading="lazy" width="1200" height="675"><figcaption><b>من عين المستخدم</b>سهلة للمستخدم</figcaption></figure><figure><img src="img/labs-3-builder.jpg" alt="مكتب المصمم: Termux ومخطط الواجهة والمنطق وقاعدة البيانات" loading="lazy" width="1200" height="675"><figcaption><b>من عين المصمم</b>مبنية بالكود والدليل</figcaption></figure></div></div><div class="gcat" id="gallery-pos" data-cat="pos"><h3 style="margin-top:34px">نقاط البيع</h3><p class="gs">من فاتورة البيع للمخزون والعملاء وتقرير اليوم. الصور توضيحية والأصناف والأسعار فيها وهمية.</p><div class="gg"><figure><img src="img/pos-1-idea.jpg" alt="الفكرة العامة لنظام نقاط البيع" loading="lazy" width="1200" height="675"><figcaption><b>الفكرة العامة</b>نقطة البيع والمنتجات والفواتير والمخزون والعملاء والتقارير في نظرة واحدة</figcaption></figure><figure><img src="img/pos-2-user.jpg" alt="بائع يستخدم تطبيق نقطة البيع على الموبايل" loading="lazy" width="1200" height="675"><figcaption><b>من عين المستخدم</b>سهلة للمستخدم</figcaption></figure><figure><img src="img/pos-3-builder.jpg" alt="مكتب المصمم: Termux ومخطط الواجهة والمنطق وقاعدة البيانات" loading="lazy" width="1200" height="675"><figcaption><b>من عين المصمم</b>مبنية بالكود والدليل</figcaption></figure></div></div><div class="gcat" id="gallery-shipping" data-cat="shipping"><h3 style="margin-top:34px">مركز الشحن</h3><p class="gs">من الطلب للتغليف والتتبع لحد التسليم. الصور توضيحية والطلبات وشركات الشحن فيها وهمية.</p><div class="gg"><figure><img src="img/shipping-1-idea.jpg" alt="الفكرة العامة لمركز الشحن" loading="lazy" width="1200" height="675"><figcaption><b>الفكرة العامة</b>الطلبات والتغليف والتتبع والتسليم وشركات الشحن في نظرة واحدة</figcaption></figure><figure><img src="img/shipping-2-user.jpg" alt="عامل مخزن يستخدم تطبيق مركز الشحن على الموبايل" loading="lazy" width="1200" height="675"><figcaption><b>من عين المستخدم</b>سهلة للمستخدم</figcaption></figure><figure><img src="img/shipping-3-builder.jpg" alt="مكتب المصمم: Termux ومخطط الواجهة والمنطق وقاعدة البيانات" loading="lazy" width="1200" height="675"><figcaption><b>من عين المصمم</b>مبنية بالكود والدليل</figcaption></figure></div></div></div></section>
 <section id="vault"><div class="w"><div class="vault"><div style="color:var(--gold);font-size:21px">☥ خزينة القلم ☥</div><p>وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا</p><div class="t">MANUSCRIPT <em>IS AUTHORITY</em><br>CONTRACTS <em>AUTHORIZE</em><br>PROOF <em>VALIDATES</em><br>GIT <em>PRESERVES</em><br>MOHAMED.K_ROBY <em>DECIDES</em></div><p style="color:var(--mut)">الماضي حدث • الحاضر يحدث • المستقبل سيحدث</p><a href="https://github.com/Mk-arch2030/RobY_BoT_FactorY-NE">⌘ RobY_BoT_FactorY-NE · GitHub Repository</a></div></div></section>
 <style>#nb{background:none;border:1px solid var(--gold);color:var(--gold);border-radius:999px;font:inherit;font-size:13px;padding:4px 12px 4px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}#nb i{font-style:normal;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#000;font-weight:700;display:inline-flex;align-items:center;justify-content:center}#np{display:none;margin-top:10px}#np.open{display:block}</style><div id="numbers" style="max-width:760px;margin:0 auto;padding:14px 18px;text-align:center;font-size:12.5px;line-height:1.7;color:var(--mut);direction:rtl"><figure style="margin:0 0 14px"><img src="img/hafez-el-zaman.jpg" alt="لوحة حافظ الزمن — اللوحة الرسمية للمصنع" style="width:100%;max-width:640px;border-radius:12px;border:1px solid var(--gold);display:block;margin:0 auto"><figcaption style="margin-top:8px">حافظ الزمن، 26 نوفمبر 2026</figcaption></figure><button id="nb" type="button" aria-expanded="true" aria-controls="np" onclick="var p=document.getElementById('np');var o=p.classList.toggle('open');this.setAttribute('aria-expanded',o)"><i>؟</i> عن الأرقام</button><div id="np" class="open">الأرقام المعروضة مرتبطة بمنتجاتها ومراحلها؛ 468 تخص Anas Clinic، و360 تخص إثبات Stage 08 في ViP Clinic. هذه الأرقام من سجلات المشروع وليست تحققًا مستقلًا من جميع المنتجات.<br><span dir="ltr">Test counts are product- and stage-specific: 468 for Anas Clinic and 360 for ViP Clinic Stage 08. They are project records, not an independent audit of every product.</span></div></div><footer><span class="on">● FACTORY STATUS: BUILDING THE FUTURE</span>© 2026 RobY_BoT_FactorY · One Factory, Not Factories</footer><script>(function(){
-var T=['home','products','journey','team','gallery','vault','numbers'],C=['clinics','labs','pos','shipping'];
-var P={home:['home','seal'],products:['products'],journey:['journey'],team:['team'],gallery:['gallery'],vault:['vault'],numbers:['numbers']};
+var T=['home','products','factory-products','journey','team','gallery','vault','numbers'],C=['clinics','labs','pos','shipping'];
+var P={home:['home','seal'],products:['products'],'factory-products':['factory-products'],journey:['journey'],team:['team'],gallery:['gallery'],vault:['vault'],numbers:['numbers']};
 var b=document.body;
 Object.keys(P).forEach(function(k){P[k].forEach(function(id){var e=document.getElementById(id);if(e)e.classList.add('pane')})});
 b.classList.add('js-tabs');
@@ -77,4 +189,5 @@ tb.forEach(function(x){x.addEventListener('click',function(ev){ev.preventDefault
 gb.forEach(function(x){x.addEventListener('click',function(ev){ev.preventDefault();showCat(x.dataset.cat)})});
 window.addEventListener('hashchange',function(){route()});
 route(true);
+document.querySelectorAll('.flip-inner').forEach(function(c){c.addEventListener('click',function(){var f=c.parentNode.classList.toggle('is-flipped');c.setAttribute('aria-pressed',f?'true':'false')})});
 })();</script></body></html>
