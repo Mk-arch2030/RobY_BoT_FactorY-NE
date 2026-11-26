@@ -67,14 +67,14 @@ function showCat(c){if(C.indexOf(c)<0)c='clinics';document.querySelectorAll('.gc
 function show(t,c,noscroll){if(T.indexOf(t)<0)t='home';
 document.querySelectorAll('.pane').forEach(function(e){e.classList.remove('on')});
 P[t].forEach(function(id){var e=document.getElementById(id);if(e)e.classList.add('on')});
-tb.forEach(function(x){var on=x.dataset.tab===t;x.setAttribute('aria-selected',on);if(on&&x.scrollIntoView&&!noscroll){try{x.scrollIntoView({inline:'center',block:'nearest'})}catch(e){}}});
+tb.forEach(function(x){var on=x.dataset.tab===t;x.setAttribute('aria-selected',on);if(on&&!noscroll){try{var bar=x.parentNode;if(bar&&bar.scrollWidth>bar.clientWidth){bar.scrollLeft=x.offsetLeft-(bar.clientWidth-x.offsetWidth)/2}}catch(e){}}});
 if(t==='gallery')showCat(c||'clinics');
 return t}
 function route(noscroll){var h=decodeURIComponent((location.hash||'').slice(1));var t='home',c=null;
 if(h.indexOf('gallery-')===0){t='gallery';c=h.slice(8)}else if(h==='seal'){t='home'}else if(T.indexOf(h)>=0){t=h}
 show(t,c);if(!noscroll)window.scrollTo(0,0)}
-tb.forEach(function(x){x.addEventListener('click',function(){history.replaceState(null,'','#'+x.dataset.tab);show(x.dataset.tab);window.scrollTo(0,0)})});
-gb.forEach(function(x){x.addEventListener('click',function(){history.replaceState(null,'','#gallery-'+x.dataset.cat);showCat(x.dataset.cat)})});
+tb.forEach(function(x){x.addEventListener('click',function(ev){ev.preventDefault();show(x.dataset.tab);window.scrollTo(0,0)})});
+gb.forEach(function(x){x.addEventListener('click',function(ev){ev.preventDefault();showCat(x.dataset.cat)})});
 window.addEventListener('hashchange',function(){route()});
 route(true);
 })();</script></body></html>
